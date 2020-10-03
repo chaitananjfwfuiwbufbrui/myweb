@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
 
-    <title>Reflux HTML CSS Template</title>
+    <title>chaitanya </title>
 <!--
 Reflux Template
 https://templatemo.com/tm-531-reflux
@@ -55,23 +55,17 @@ https://templatemo.com/tm-531-reflux
             </nav>
             <div class="social-network">
               <ul class="soial-icons">
+                
                 <li>
-                  <a href="https://fb.com/templatemo"
-                    ><i class="fa fa-facebook"></i
-                  ></a>
+                  <a href="https://twitter.com/Chaitan42590042"target="_blank"><i class="fa fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.linkedin.com/in/chaitanya-pidugu-09b8bb18b/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://github.com/chaitananjfwfuiwbufbrui"target="_blank"><i class="fa fa-github"></i></a>
                 </li>
-                <li>
-                  <a href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-rss"></i></a>
-                </li>
+                
               </ul>
             </div>
             <div class="copyright-text">
@@ -80,7 +74,19 @@ https://templatemo.com/tm-531-reflux
           </div>
         </div>
       </div>
-
+       
+      {% for message in messages  %}
+   
+      <div class="alert alert-{{ message.tags}} alert-dismissible fade show" role="alert">
+     
+        <strong>message:</strong>{{ message}}
+     
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
+      {% endfor %}
       <section class="section about-me" data-section="section1">
         <div class="container">
           <div class="section-heading">
@@ -211,18 +217,21 @@ https://templatemo.com/tm-531-reflux
                 <div class="isotope-item" data-type="nature">
                   <figure class="snip1321">
                     <img 
-                      src=" {% static 'assets/images/portfolio-01.jpg' %}"
+                      src=" {% static 'assets/images/work2.png' %}"
                       alt="sq-sample26"
                     />
                     <figcaption>
                       <a
-                        href="{% static 'assets/images/portfolio-01.jpg' %} "
+                        href="{% static 'assets/images/work2.png' %} "
                         data-lightbox="image-1"
                         data-title="Caption"
-                        ><i class="fa fa-search"></i
+                        >
+                        <a href="https://github.com/chaitananjfwfuiwbufbrui/ecommerse-2" target="_blank"><button> source code </button></a>
+                        <button>visit</button>
+                        
                       ></a>
-                      <h4>my ecommerse website</h4>
-                      <span>footware ecommerse</span>
+                      <h4>My Ecommerse Website</h4>
+                      <span>Footware Ecommerse</span>
                     </figcaption>
                   </figure>
                 </div>
@@ -258,16 +267,14 @@ https://templatemo.com/tm-531-reflux
           <div class="section-heading">
             <h2>Contact Me</h2>
             <div class="line-dec"></div>
-            <span
-              >Fusce eget nibh nec justo interdum condimentum. Morbi justo ex,
-              efficitur at ante ac, tincidunt maximus ligula. Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit.</span
-            >
+            
+            
           </div>
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form id="contact" action="" method="post">
+                <form id="contact" action="/" method="post">
+                  {% csrf_token %}
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
@@ -285,7 +292,7 @@ https://templatemo.com/tm-531-reflux
                       <fieldset>
                         <input
                           name="email"
-                          type="text"
+                          type="email"
                           class="form-control"
                           id="email"
                           placeholder="Your email..."
