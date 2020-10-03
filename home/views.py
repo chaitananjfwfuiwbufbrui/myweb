@@ -10,7 +10,7 @@ def home(request):
             message = request.POST['message']
             ins = Home(name=name,email=email, subject1=subject, message1=message)
             ins.save()
-            messages.success(request,'u r messege has been recived')
+            messages.success(request,'YOUR response has been recived')
             print("done for the data")
     return render(request,'index.html')
 def sample(request):
